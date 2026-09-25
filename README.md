@@ -60,4 +60,5 @@ This matches the objectives in your main project document, including real-time w
 
 ## System Architecture
 
+<img width="1556" height="1011" alt="System_Architecture" src="https://github.com/user-attachments/assets/e5543da7-50c2-492d-b34b-d3215cabf079" />
 
