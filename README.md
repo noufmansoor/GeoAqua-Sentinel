@@ -62,3 +62,7 @@ This matches the objectives in your main project document, including real-time w
 
 <img width="1556" height="1011" alt="System_Architecture" src="https://github.com/user-attachments/assets/e5543da7-50c2-492d-b34b-d3215cabf079" />
 
+## PoC Dashboard
+<img width="5265" height="1485" alt="GeoAqua_Sentinel_Dashboard" src="https://github.com/user-attachments/assets/65adba01-d936-418a-911a-b2fd6dee3dd2" />
+
+
