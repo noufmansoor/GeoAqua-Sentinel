@@ -57,3 +57,7 @@ The IoT data used in the current PoC is synthetic. Future development will inclu
 ## Project Goal
 Our goal is to provide an intelligent and affordable water monitoring solution that supports early detection of water quality problems and leakage while improving sustainable water management.
 This matches the objectives in your main project document, including real-time water monitoring, Earth Observation integration, AI analysis, GIS visualization, alerts, and smart-city scalability.
+
+## System Architecture
+
+
