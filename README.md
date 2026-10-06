@@ -48,7 +48,7 @@ Satellite indices serve as environmental indicators. They do not directly measur
 | File | Purpose |
 | --- | --- |
 | `README.md` | Project documentation and execution instructions |
-| `GeoAqua_Sentinel_PoC.ipynb` | Main satellite analysis and AI demonstration notebook |
+| `GeoAqua_Sentinel_PoC_final.ipynb` | Main satellite analysis and AI demonstration notebook |
 | `requirements.txt` | Listed Python dependencies |
 | `GeoAqua_Synthetic_IoT_Data.csv` | Example dataset with 500 synthetic sensor records |
 | `GeoAqua_Sentinel_Dashboard.png` | Example combined monitoring dashboard |
@@ -82,26 +82,36 @@ https://www.planet.com/data/stac/tanager-core-imagery/coastal-water-bodies/colle
 Satellite files are downloaded during execution. They are not included in this repository.
 
 ### Synthetic IoT Data
+
 Provider: GeoAqua Sentinel team.
+
 Acquisition date: Not applicable. The records are simulated.
+
 Processing level: Generated tabular data prepared for model training and testing.
+
 Licence: No separate public dataset licence specified.
+
 The notebook generates 500 simulated records:
+
 - 250 Normal records
 - 250 Abnormal records
 - Random seed: 42
-The records represent a coastal water demonstration and do not contain real sensor observations, station coordinates, or measurement timestamps.
-Column	Description	Unit
-pH	Acidity or alkalinity	Dimensionless
-Turbidity_NTU	Simulated water turbidity	NTU
-Temperature_C	Simulated water temperature	°C
-TDS_mg_L	Simulated total dissolved solids	mg/L
-Water_Flow_L_min	Simulated water flow rate	L/min
-Result	Synthetic class label	Normal or Abnormal
 
+The records represent a coastal water demonstration and do not contain real sensor observations, station coordinates, or measurement timestamps.
+
+| Column | Description | Unit |
+| --- | --- | --- |
+| `pH` | Acidity or alkalinity | Dimensionless |
+| `Turbidity_NTU` | Simulated water turbidity | NTU |
+| `Temperature_C` | Simulated water temperature | °C |
+| `TDS_mg_L` | Simulated total dissolved solids | mg/L |
+| `Water_Flow_L_min` | Simulated water flow rate | L/min |
+| `Result` | Synthetic class label | Normal or Abnormal |
 
 Example data file:
+
 [GeoAqua_Synthetic_IoT_Data.csv](GeoAqua_Synthetic_IoT_Data.csv)
+
 The notebook regenerates the synthetic dataset during execution and exports the CSV at the end.
 
 ## 6. Technical Approach
@@ -175,16 +185,18 @@ Internet access is required to install dependencies and download satellite image
 1. Open https://colab.research.google.com.
 2. Select File → Open notebook → GitHub.
 3. Enter https://github.com/noufmansoor/GeoAqua-Sentinel.
-4. Open GeoAqua_Sentinel_PoC.ipynb.
+4. Open `GeoAqua_Sentinel_PoC_final.ipynb`.
 5. Run the first installation cell.
 6. Add a code cell before the AI section and run:
 
+   ```python
    %pip install pandas scikit-learn
+   ```
 
 7. Restart the session if prompted.
 8. Run the notebook cells from the beginning in order.
 
-The notebook installation commands currently use unpinned packages. Installation from the repository’s pinned requirements.txt still needs verification in a fresh session.
+The notebook installation commands currently use unpinned packages. Installation from the repository’s pinned `requirements.txt` still needs verification in a fresh session.
 
 ### Option B: Local Jupyter
 
@@ -192,33 +204,42 @@ The local setup below targets Python 3.12. This setup has not yet been verified 
 
 Run these commands in your terminal:
 
-    git clone https://github.com/noufmansoor/GeoAqua-Sentinel.git
-    cd GeoAqua-Sentinel
-    python3.12 -m venv .venv
+```bash
+git clone https://github.com/noufmansoor/GeoAqua-Sentinel.git
+cd GeoAqua-Sentinel
+python3.12 -m venv .venv
+```
 
 Activate the environment on macOS or Linux:
 
-    source .venv/bin/activate
+```bash
+source .venv/bin/activate
+```
 
 Activate the environment on Windows PowerShell:
 
-    .\.venv\Scripts\Activate.ps1
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
 
 Install dependencies and start JupyterLab:
 
-    python -m pip install --upgrade pip
-    python -m pip install -r requirements.txt
-    python -m pip install jupyterlab
-    python -m jupyterlab
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install jupyterlab
+python -m jupyterlab
+```
 
-Open GeoAqua_Sentinel_PoC.ipynb.
+Open `GeoAqua_Sentinel_PoC_final.ipynb`.
 
-For a local run using requirements.txt, skip the notebook’s first installation cell to preserve the installed package versions.
+For a local run using `requirements.txt`, skip the notebook’s first installation cell to preserve the installed package versions.
+
 ## 8. How to Run
 
 ### Full Demonstration
 
-1. Open `GeoAqua_Sentinel_PoC.ipynb`.
+1. Open `GeoAqua_Sentinel_PoC_final.ipynb`.
 2. Complete installation using one of the options above.
 3. Run all remaining cells in order.
 4. Wait for the satellite download to finish.
@@ -401,4 +422,3 @@ The GeoAqua Sentinel demonstration adds synthetic IoT records, Random Forest cla
 ### Project Code and Synthetic Data
 
 No separate project licence file is currently included in this repository. The satellite data licence does not automatically cover the project code or synthetic dataset.
-
