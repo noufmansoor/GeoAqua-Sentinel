@@ -10,7 +10,7 @@ The project combines Planet Tanager hyperspectral satellite imagery, simulated I
 
 - Country: United Arab Emirates
 - Event: Arab Youth Space Hackathon 2026, 813 Challenge
-- Focus: Water quality, inland and coastal water intelligence
+- Official theme: Water quality, inland and coastal water intelligence
 - Study area: Tarif coastal area, Al Dhafra, Abu Dhabi
 - Status: Proof of concept using satellite imagery and synthetic sensor data
 
@@ -82,28 +82,26 @@ https://www.planet.com/data/stac/tanager-core-imagery/coastal-water-bodies/colle
 Satellite files are downloaded during execution. They are not included in this repository.
 
 ### Synthetic IoT Data
-
+Provider: GeoAqua Sentinel team.
+Acquisition date: Not applicable. The records are simulated.
+Processing level: Generated tabular data prepared for model training and testing.
+Licence: No separate public dataset licence specified.
 The notebook generates 500 simulated records:
-
 - 250 Normal records
 - 250 Abnormal records
 - Random seed: 42
+The records represent a coastal water demonstration and do not contain real sensor observations, station coordinates, or measurement timestamps.
+Column	Description	Unit
+pH	Acidity or alkalinity	Dimensionless
+Turbidity_NTU	Simulated water turbidity	NTU
+Temperature_C	Simulated water temperature	°C
+TDS_mg_L	Simulated total dissolved solids	mg/L
+Water_Flow_L_min	Simulated water flow rate	L/min
+Result	Synthetic class label	Normal or Abnormal
 
-The measurements represent a coastal water demonstration and are not real sensor observations.
-
-| Column | Description | Unit |
-| --- | --- | --- |
-| `pH` | Acidity or alkalinity | pH |
-| `Turbidity_NTU` | Water turbidity | NTU |
-| `Temperature_C` | Water temperature | °C |
-| `TDS_mg_L` | Total dissolved solids | mg/L |
-| `Water_Flow_L_min` | Water flow rate | L/min |
-| `Result` | Synthetic class label | Normal or Abnormal |
 
 Example data file:
-
 [GeoAqua_Synthetic_IoT_Data.csv](GeoAqua_Synthetic_IoT_Data.csv)
-
 The notebook regenerates the synthetic dataset during execution and exports the CSV at the end.
 
 ## 6. Technical Approach
@@ -170,72 +168,52 @@ These thresholds support the demonstration. They have not been calibrated agains
 
 ### Option A: Google Colab
 
-1. Open https://colab.research.google.com
-2. Choose **File → Open notebook → GitHub**.
-3. Paste this repository URL:
+The current Google Colab session uses Python 3.13.16. No GPU is required.
 
-   https://github.com/noufmansoor/GeoAqua-Sentinel
+Internet access is required to install dependencies and download satellite imagery.
 
-4. Open `GeoAqua_Sentinel_PoC.ipynb`.
+1. Open https://colab.research.google.com.
+2. Select File → Open notebook → GitHub.
+3. Enter https://github.com/noufmansoor/GeoAqua-Sentinel.
+4. Open GeoAqua_Sentinel_PoC.ipynb.
 5. Run the first installation cell.
-6. Before running the AI section, run this command in an additional code cell:
+6. Add a code cell before the AI section and run:
 
-   ```python
    %pip install pandas scikit-learn
-   ```
 
-7. Restart the runtime if package installation requests a restart.
-8. Run the notebook from the beginning.
+7. Restart the session if prompted.
+8. Run the notebook cells from the beginning in order.
+
+The notebook installation commands currently use unpinned packages. Installation from the repository’s pinned requirements.txt still needs verification in a fresh session.
 
 ### Option B: Local Jupyter
 
-Use Python 3.12 as the setup target.
+The local setup below targets Python 3.12. This setup has not yet been verified in a clean environment.
 
-The notebook metadata records Python 3.9.6 from an earlier environment. The complete dependency list has not yet been verified in a clean Python 3.12 environment.
+Run these commands in your terminal:
 
-Clone the repository:
-
-```bash
-git clone https://github.com/noufmansoor/GeoAqua-Sentinel.git
-cd GeoAqua-Sentinel
-```
-
-Create a virtual environment:
-
-```bash
-python3.12 -m venv .venv
-```
+    git clone https://github.com/noufmansoor/GeoAqua-Sentinel.git
+    cd GeoAqua-Sentinel
+    python3.12 -m venv .venv
 
 Activate the environment on macOS or Linux:
 
-```bash
-source .venv/bin/activate
-```
+    source .venv/bin/activate
 
 Activate the environment on Windows PowerShell:
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
+    .\.venv\Scripts\Activate.ps1
 
-Install the dependencies:
+Install dependencies and start JupyterLab:
 
-```bash
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-python -m pip install jupyterlab
-```
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
+    python -m pip install jupyterlab
+    python -m jupyterlab
 
-Start JupyterLab:
+Open GeoAqua_Sentinel_PoC.ipynb.
 
-```bash
-python -m jupyterlab
-```
-
-Open `GeoAqua_Sentinel_PoC.ipynb`.
-
-The notebook contains an additional installation cell with unpinned packages. For a local run using `requirements.txt`, skip this cell to preserve the installed package versions.
-
+For a local run using requirements.txt, skip the notebook’s first installation cell to preserve the installed package versions.
 ## 8. How to Run
 
 ### Full Demonstration
@@ -390,19 +368,19 @@ These assignments require confirmation from each member before being recorded as
 
 ### Alreem Ahmed Alkatheeri
 
-Project research, problem definition, and water monitoring use case.
+Earth Observation and satellite data analysis.
 
 ### Nouf Mansoor Alblooshi
 
-Satellite data analysis, notebook testing, and GitHub repository organization.
+PoC notebook development, Google Colab implementation, and technical integration.
 
 ### Mouza Abdullah Almansoori
 
-Synthetic IoT dataset preparation, Random Forest classification, and results analysis.
+Study area analysis, project documentation, and Tarif coastal area context.
 
 ### Marya Mohammed Alhammadi
 
-Dashboard visualization, system architecture diagram, and presentation preparation.
+Synthetic IoT dataset development and water monitoring variables.
 
 ## 15. Licence and Attribution
 
