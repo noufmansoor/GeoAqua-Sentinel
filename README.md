@@ -2,6 +2,7 @@
 
 A proof of concept combining Planet Tanager hyperspectral imagery, simulated IoT measurements, and machine learning to support coastal water inspection decisions.
 
+- Faculty mentor: Dr. Abdel Rahman Al Kharabsheh
 - Team: Alreem Ahmed Alkatheeri, Nouf Mansoor Alblooshi, Mouza Abdullah Almansoori, Marya Mohammed Alhammadi
 - Country: United Arab Emirates
 - Event: Arab Youth Space Hackathon 2026, 813 Challenge
@@ -27,6 +28,7 @@ The proposed operational use supports inspection decisions alongside field measu
 
 Field sampling and sensors provide measurements at specific locations and times. They leave gaps between monitoring points, limiting assessment across a wider coastal area.
 
+The challenge is monitoring conditions across the Tarif coastal study area rather than only at individual sampling points.
 The PoC examines this monitoring challenge in the Tarif coastal area. Satellite imagery provides spatial observations across the selected scene, supporting screening beyond individual sampling locations.
 
 Planet Tanager hyperspectral imagery supports water detection, a chlorophyll proxy, and a relative turbidity indicator.
